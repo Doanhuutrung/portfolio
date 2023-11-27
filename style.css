@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500|Rubik:500,700");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  line-height: 26px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #777777;
+}
+
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+  /* background: #ffffff; */
+  /* text-align: center; */
+}
+
+#home {
+  padding-top: 200px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  color: #333;
+}
+
+.navbar {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: -2px;
+  width: 100%;
+  background: #222222; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: -70px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  transform: translateY(70px);
+  transition: transform 500ms ease, background 500ms ease;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-menu a {
+  font-size: 20px;
+  color: #222222;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.about-content {
+  padding: 0 30px;
+  text-align: left;
+}
+
+nav {
+  padding: 20px;
+  text-align: right;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+}
+main {
+  padding-top: 50px;
+}
+
+.passion-image {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.passion-image img {
+  max-width: 260px;
+  max-height: 173px;
+}
+
+.button-common {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 0px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 46px;
+  outline: none !important;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
+    radial-gradient(circle at top left, #4458dc, #854fee);
+  border: double 2px transparent;
+  box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+  margin-top: 20px;
+}
+
+.button-common span {
+  padding: 0 40px;
+}
+
+.contact-infor {
+  display: flex;
+}
+
+.contact-box {
+  background: url(./img/contact.png) no-repeat center;
+  padding: 150px 0px;
+}
+
+.contact-box h2 {
+  color: #ffffff;
+}
+
+.contact-box p {
+  color: #ffffff;
+}
+
+.edit{
+  padding-left: 300px;
+}
+.contact-box .contact-form {
+  /* display: flex; */
+  /* flex-direction: column; */
+  align-items: center;
+  min-width: 380px;
+  /* max-width: 380px; */
+  /* line-height: 48px; */
+  padding: 0 25px;
+  /* border: 1px solid #ffffff; */
+  background: transparent;
+  font-weight: 400;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  border: 0;
+  margin: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.button-submit {
+  margin-left: 10px;
+  background: #ffffff;
+  text-transform: uppercase;
+  color: #222222;
+  border-radius: 5px;
+  line-height: 48px;
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  padding: 15px 35px;
+  margin-top: 10px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.project-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.project-list img{
+  width: 500px;
+}
+
+.gallery-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+}
+
+.portfolio-img img {
+  width: 370px;
+  height: 325px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* background-color: #4458dc; */
+}
+
+footer {
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-social{
+  font-size: 30px;
+  color: #788489;
+  text-align: center;
+  margin: 25px 0px 30px;
+}
+
+.footer-social a{
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
