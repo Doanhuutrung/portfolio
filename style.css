@@ -5,6 +5,11 @@
 *:after {
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -21,7 +26,6 @@ body {
   font-weight: 400;
   color: #777777;
 }
-
 
 header {
   position: absolute;
@@ -125,6 +129,41 @@ main {
   padding-top: 50px;
 }
 
+.banner-inner {
+  padding: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner-content h1 {
+  margin-top: 20px;
+  font-size: 70px;
+  line-height: 60px;
+  margin-bottom: 25px;
+}
+
+.banner-content h3 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* .banner-content h3::after{
+  content: '';
+  width: 410px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 23%;
+  background: #000000;
+} */
+
+.banner-content h5 {
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
 .passion-image {
   display: flex;
   gap: 50px;
@@ -179,9 +218,6 @@ main {
   color: #ffffff;
 }
 
-.edit{
-  padding-left: 300px;
-}
 .contact-box .contact-form {
   /* display: flex; */
   /* flex-direction: column; */
@@ -227,13 +263,31 @@ textarea {
   cursor: pointer;
 }
 
-.project-list{
+.service-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+  gap: 30px;
 }
 
-.project-list img{
+.service-item {
+  padding: 45px 25px;
+  text-align: center;
+  background: #f9f9fd;
+  cursor: pointer;
+  width: 210px;
+  margin-bottom: 30px;
+  transition: all 0.4s ease 0s;
+}
+
+.project-list {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.project-list img {
   width: 500px;
 }
 
@@ -264,14 +318,14 @@ footer {
   width: 100%;
 }
 
-.footer-social{
+.footer-social {
   font-size: 30px;
   color: #788489;
   text-align: center;
   margin: 25px 0px 30px;
 }
 
-.footer-social a{
+.footer-social a {
   padding: 0 20px;
 }
 
