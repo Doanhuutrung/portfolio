@@ -164,6 +164,10 @@ main {
   margin-bottom: 35px;
 }
 
+.banner-button a{
+  margin-right: 30px;
+}
+
 .passion-image {
   display: flex;
   gap: 50px;
