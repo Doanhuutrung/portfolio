@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="dev.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <title>Portfolio</title>
 </head>
@@ -253,16 +252,27 @@
       <p>
         Bearing Void gathering light light his eavening unto dont afraid.
       </p>
-      <div class="contact-form">
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
-        <input type="text" class="form-control" id="mail" name="mail" placeholder="Enter your mail address">
-        <a class="button-submit" href="#">
-          <span> Subcribe </span>
-        </a>
-      </div>
-
+      <form name="Contact" class="contact-form"  onclick="validateForm" method="post">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+        <input type="email" class="form-control" id="mail" name="mail" placeholder="Enter your mail address" required>
+      <!-- <label for="mail">
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
+        <input type="email" id="mail" name="mail" required minlength="8"  placeholder="Enter your email address"/>
+        <span class="error" aria-live="polite"></span>
+      </label> -->
+      <button class="button-submit" type="submit" id="clk" >Submit</button>
+      </form> 
+      <!-- <div id="SubmitPopup" class="popup">
+        <div class="popup-content">
+          <h4>thanks you for your Submit</h4>
+          <button id="ClosePopup">
+            Close
+          </button>
+        </div>
+      </div> -->
     </div>
   </section>
+
   <footer>
     <h2> FOLLOW ME </h2>
     <div class="footer-social">
@@ -282,5 +292,6 @@
     </div>
     <p> &copy; 2023 My Portfolio. All rights reserved. </p>
   </footer>
+  <script src="./dev.js"></script>
 </body>
 </html>
