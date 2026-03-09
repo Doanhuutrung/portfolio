@@ -6,7 +6,7 @@ export const Button = ({ className, size = "default", children }) => {
     default: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg",
   };
-  const classes = `${baseClasses} ${sizeClasses[size]}`;
+  const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
   return (
     <button className={classes}>
       <span className="relative flex items-center justify-center gap-2">
