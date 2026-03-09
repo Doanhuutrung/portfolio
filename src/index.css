@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
-:root {
+/* =========================
+   DESIGN SYSTEM (TAILWIND V4)
+========================= */
+
+@theme {
+  /* colors */
   --color-background: #0b0f14;
   --color-foreground: #f8fafc;
 
   --color-card: #111827;
+  --color-surface: #0f172a;
 
   --color-primary: #007bff;
   --color-primary-foreground: #ffffff;
@@ -17,19 +23,35 @@
 
   --color-border: #1e293b;
 
-  --color-surface: #0f172a;
+  --color-highlight: #3b82f6;
 
-  --radius: 0.75rem;
+  /* radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+
+  /* container */
+  --container-padding: 1.5rem;
+
+  /* shadows */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* =========================
+   BASE STYLES
+========================= */
+
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    @apply bg-background text-foreground;
     font-family:
       system-ui,
       -apple-system,
@@ -42,5 +64,63 @@
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+/* =========================
+   COMPONENT UTILITIES
+========================= */
+
+@layer components {
+  .container-custom {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+
+  .section-padding {
+    padding-block: 6rem;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-xl p-6;
+  }
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+  background: #007bff;
+  color: white;
 }
