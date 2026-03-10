@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { Behance } from "@/components/icons/Behance";
 
 export const Hero = () => {
   return (
@@ -64,6 +65,19 @@ export const Hero = () => {
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" /> Download My Resume
               </AnimatedBorderButton>
+            </div>
+
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span>Follow:</span>
+              {[
+                { icon: Github, href: "#" },
+                { icon: Behance, href: "#" },
+                { icon: Linkedin, href: "#" },
+              ].map((social, idx) => (
+                <a key={idx} href={social.href}>
+                  {<social.icon />}
+                </a>
+              ))}
             </div>
           </div>
         </div>
