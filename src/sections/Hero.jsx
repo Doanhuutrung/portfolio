@@ -1,7 +1,28 @@
 import { Button } from "@/components/Button";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Github,
+  Linkedin,
+  ChevronDown,
+} from "lucide-react";
 import { Behance } from "@/components/icons/Behance";
+
+const skills = [
+  "React",
+  "Next.js",
+  "Three.js",
+  "TypeScript",
+  "Node.js",
+  "Firebase",
+  "MongoDB",
+  "Vercel",
+  "Tailwind CSS",
+  "Prisma",
+  "Figma",
+  "Git",
+];
 
 export const Hero = () => {
   return (
@@ -70,13 +91,22 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow:</span>
               {[
-                { icon: Github, href: "#" },
-                { icon: Behance, href: "#" },
-                { icon: Linkedin, href: "#" },
-              ].map((social, idx) => (
+                {
+                  icon: Github,
+                  href: "https://github.com/Doanhuutrung",
+                  target: "_blank",
+                },
+                { icon: Behance, href: "https://www.behance.net/trungonhu" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/huu-t-111258254/",
+                },
+              ].map((social, target, idx) => (
                 <a
                   key={idx}
                   href={social.href}
+                  target={target}
+                  rel="noopener noreferrer"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
@@ -94,10 +124,63 @@ export const Hero = () => {
                   alt="HuuTrung"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
+
+                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-300 rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">
+                      Available for working in Danang
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">3+</div>
+                  <div className="text-xs text-muted-foreground">
+                    Years Exp.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technology I work with:
+          </p>
+          <div className="relative overflow-hidden">
+            <div
+              className="absolute left-0 top-0 bottom-0 w-32
+             bg-gradient-to-r from-background to-transparent z-10"
+            />
+            <div
+              className="absolute right-0 top-0 bottom-0 w-32
+             bg-gradient-to-l from-background to-transparent z-10"
+            />
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skills, idx) => (
+                <div key={idx} className="flex-shrink-0 px-8 py-4">
+                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                    {skills}
+                  </span>
+                </div>
+              ))}{" "}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 
+      animate-fade-in animation-delay-800"
+      >
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+        >
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </a>
       </div>
     </section>
   );
