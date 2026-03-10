@@ -1,13 +1,14 @@
 import { Button } from "@/components/Button";
-import { X, Menu } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Project" },
+  { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#Testimonials", label: "Testimonials" },
+  { href: "#testimonials", label: "Testimonials" },
 ];
+
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,60 +17,73 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"}  z-50`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
+        isScrolled ? "glass-mobile py-3" : "bg-transparent py-5"
+      }  z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        {/* Desktop Navbar */}
         <a
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          Doan Huu Trung <span></span>
+          PM<span className="text-primary">.</span>
         </a>
+
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
                 href={link.href}
                 key={index}
-                className="px-4 py-2 text-sm text-mute-foreground hover:text-foreground rounded-full hover:bg-surface"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
               >
                 {link.label}
               </a>
             ))}
           </div>
         </div>
+
+        {/* CTA Button */}
         <div className="hidden md:block">
           <Button size="sm">Contact Me</Button>
         </div>
-        {/* Mobile Navbar */}
+
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 text-foreground cursor-pointer"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
-          {isMobileMenuOpen ? <X size={20} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
+
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-mobile">
+        <div className="md:hidden glass-mobile animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navLinks.map((link, index) => (
               <a
                 href={link.href}
                 key={index}
-                className="text-lg text-muted-foreground hover:text-foreground py-2
-            "
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-lg text-muted-foreground hover:text-foreground py-2"
               >
                 {link.label}
               </a>
             ))}
-            <Button>Contact Me</Button>
+
+            <Button onClick={() => setIsMobileMenuOpen(false)}>
+              Contact Me
+            </Button>
           </div>
         </div>
       )}
