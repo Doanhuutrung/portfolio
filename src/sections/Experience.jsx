@@ -23,7 +23,7 @@ const experiences = [
     company: "Phygitals Labs",
     description:
       "Worked on experimental web projects combining 3D technologies and blockchain. Contributed to building interactive 3D websites and digital asset experiences for tourism, culture, and physical-to-digital product identification.",
-    technologies: ["React", "TypeScripts", "Next.Js", "Three.Js"],
+    technologies: ["React", "TypeScript", "Next.js", "Three.js"],
     current: false,
   },
   {

@@ -26,7 +26,10 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section id="keyvisual" className="relative min-h-screen flex items-center overflow-hiidden">
+    <section
+      id="keyvisual"
+      className="relative min-h-screen flex items-center overflow-hiidden"
+    >
       <div className="absolute inset-0">
         <img
           src="/bg-hero.jpg"
@@ -90,7 +93,7 @@ export const Hero = () => {
               >
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <a href="/resume.pdf" download>
+              <a href="/Huu Trung Resume.pdf" download>
                 <AnimatedBorderButton>
                   <Download className="w-5 h-5" />
                   Download My Resume
