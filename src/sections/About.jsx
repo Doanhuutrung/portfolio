@@ -3,26 +3,27 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
+    title: "UI Development",
     description:
-      "Writing maintainable, scalable code that stands the test of time.",
+      "Creating modern and responsive user interfaces with React and TypeScript.",
   },
   {
     icon: Rocket,
-    title: "Performance",
+    title: "User Experience",
     description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
+      "Designing simple and intuitive experiences focused on usability.",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
+    title: "Team Collaboration",
+    description:
+      "Collaborating with teams to turn ideas into digital products.",
   },
   {
     icon: Lightbulb,
-    title: "Innovation",
+    title: "Creative Thinking",
     description:
-      "Staying ahead with the latest technologies and best practices.",
+      "Exploring new ideas and improving design and development skills.",
   },
 ];
 
@@ -34,45 +35,43 @@ export const About = () => {
           {/* Left Column */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
+              <span className="text-white text-sm font-medium tracking-wider uppercase">
                 About Me
               </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building the future,
-              <span className="font-serif italic font-normal text-white">
-                {" "}
-                one component at a time.
+              Designing and building digital experiences,
+              <span className="font-serif italic font-normal text-white pl-2">
+                one interface at a time.
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                I'm a UX/UI Designer and Frontend Developer who enjoys turning
+                ideas into clean and intuitive digital experiences. My journey
+                started from a strong interest in how interfaces work and how
+                good design can improve the way people interact with technology.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                I focus on designing user-friendly interfaces and bringing them
+                to life using modern frontend technologies like React, Next.js,
+                and TypeScript.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                I enjoy bridging the gap between design and development, making
+                sure products are not only visually appealing but also
+                functional and efficient. Currently, I'm continuously learning,
+                improving my design thinking, and exploring better ways to build
+                modern web experiences.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                "My goal is to design simple, intuitive interfaces and build
+                digital products that provide meaningful experiences for users."
               </p>
             </div>
           </div>
