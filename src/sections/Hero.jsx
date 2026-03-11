@@ -26,7 +26,7 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hiidden">
+    <section id="keyvisual" className="relative min-h-screen flex items-center overflow-hiidden">
       <div className="absolute inset-0">
         <img
           src="/bg-hero.jpg"
