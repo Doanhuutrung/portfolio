@@ -6,7 +6,7 @@ const projects = [
     title: "Huyền Học Việt",
     description:
       "Nền tảng tư vấn huyền học và phong thủy dành cho người Việt, cung cấp các tính năng phân tích lá số, tư vấn vận mệnh và giao diện thân thiện giúp người dùng dễ dàng tiếp cận kiến thức huyền học.",
-    image: "/projects/phongthuy.webp",
+    image: "/portfolio/projects/phongthuy.webp",
     tags: ["React", "Typescript", "NodeJS", "Figma"],
     link: "https://huyenhocviet.com/",
   },
@@ -14,7 +14,7 @@ const projects = [
     title: "Doctor Consultation App",
     description:
       "Ứng dụng tư vấn y tế giúp người dùng trò chuyện trực tiếp với bác sĩ, đặt lịch khám và quản lý lịch hẹn thông qua giao diện hiện đại, tối ưu cho trải nghiệm người dùng.",
-    image: "/projects/projects-2.webp",
+    image: "/portfolio/projects/projects-2.webp",
     tags: ["React", "Nest.Js", "Typescript", "Figma"],
     link: "https://www.behance.net/gallery/241834869/Doctor-Consultation-App-Chat-Appointment-Experience",
   },
@@ -22,7 +22,7 @@ const projects = [
     title: "Bác Sĩ Thẩm Mỹ Nguyễn Tuấn Anh",
     description:
       "Website giới thiệu dịch vụ thẩm mỹ và phẫu thuật thẩm mỹ, tập trung vào việc trình bày dịch vụ, thành tựu của bác sĩ và tối ưu trải nghiệm người dùng khi tìm hiểu và đặt lịch tư vấn.",
-    image: "/projects/projects-3.webp",
+    image: "/portfolio/projects/projects-3.webp",
     tags: ["React", "Typescript", "NodeJS", "Figma"],
     link: "https://drtuananh.com/",
   },
@@ -30,7 +30,7 @@ const projects = [
     title: "Attendance App",
     description:
       "Ứng dụng chấm công thông minh với tính năng check-in GPS, theo dõi thời gian làm việc theo thời gian thực và thống kê tổng thời gian làm việc hàng tháng cho nhân viên.",
-    image: "/projects/projects-4.png",
+    image: "/portfolio/projects/projects-4.png",
     tags: ["React.js", "Socket.io", "MongoDB", "Figma", "Typescript"],
     link: "https://www.behance.net/gallery/240736781/Attendance-App",
   },

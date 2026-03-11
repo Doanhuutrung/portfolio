@@ -32,7 +32,7 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a href="">
           <img
-            src="/Logo.png"
+            src="/portfolio/Logo.png"
             alt="background-section"
             className="w-10 h-10 rounded-all "
           />
