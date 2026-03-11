@@ -60,7 +60,7 @@ export const Experience = () => {
             text-secondary-foreground"
           >
             Experience that
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif italic font-normal text-white pl-2">
               drives better products.
             </span>
           </h2>
