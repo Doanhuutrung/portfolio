@@ -51,12 +51,12 @@ export const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Projects that
             <span className="font-serif italic font-normal text-white pl-2">
-              make an impact.
+              bring ideas to life.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my recent work, from complex web applications to
-            innovative tools that solve real-world problems.
+            A curated selection of product, UX, and web development work —
+            turning complex ideas into intuitive digital experiences.
           </p>
         </div>
 

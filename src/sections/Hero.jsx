@@ -80,12 +80,22 @@ export const Hero = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+              <Button
+                size="lg"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" /> Download My Resume
-              </AnimatedBorderButton>
+              <a href="/resume.pdf" download>
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download My Resume
+                </AnimatedBorderButton>
+              </a>
             </div>
 
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">

@@ -29,11 +29,12 @@ export const Navbar = () => {
       }  z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
-        >
-          PM<span className="text-primary">.</span>
+        <a href="">
+          <img
+            src="/Logo.png"
+            alt="background-section"
+            className="w-10 h-10 rounded-all "
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -53,7 +54,16 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button
+            size="sm"
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Contact Me
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -80,7 +90,14 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+              size="sm"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Contact Me
             </Button>
           </div>
