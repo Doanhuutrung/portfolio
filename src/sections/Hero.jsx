@@ -56,7 +56,7 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-white">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 UX/UI Designer • Frontend Developer
               </span>
