@@ -39,12 +39,23 @@ const projects = [
     title: "Attendance App",
     description:
       "Ứng dụng chấm công với GPS check-in, theo dõi thời gian làm việc và thống kê dữ liệu nhân viên, tập trung vào việc đơn giản hóa các tác vụ thường xuyên.",
-    image: "/portfolio/projects/projects-4.png",
+    image: "/portfolio/projects/projects-4.webp",
     role: "Product Design · UX/UI · Mobile App",
     tools: ["Figma"],
     development: ["React", "Socket.io", "MongoDB", "TypeScript"],
     link: "https://www.behance.net/gallery/240736781/Attendance-App",
     linkType: "Case Study",
+  },
+  {
+    title: "SDTC",
+    description:
+      "Sea Dragon Technology — công ty công nghệ nơi tôi tham gia phát triển các sản phẩm digital, tập trung vào UI/UX, web và mobile experiences.",
+    image: "/portfolio/projects/projects-5.webp",
+    role: "UI/UX Designer · Development Team Lead",
+    tools: ["Figma", "Adobe Photoshop", "Adobe Xd"],
+    development: ["React", "TypeScript", "NodeJS"],
+    link: "https://sdtc.vn/",
+    linkType: "Live Product",
   },
 ];
 
