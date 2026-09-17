@@ -57,6 +57,17 @@ const projects = [
     link: "https://sdtc.vn/",
     linkType: "Live Product",
   },
+  {
+    title: "",
+    description:
+      "Sea Dragon Technology — công ty công nghệ chuyên thiết kế & phát triển sản phẩm tại TP.HCM, cung cấp các dịch vụ agency, marketing, website và các sản phẩm số cho doanh nghiệp ",
+    image: "/portfolio/projects/projects-5.webp",
+    role: "UI/UX Designer · Development Team Lead",
+    tools: ["Figma", "Adobe Photoshop", "Adobe Xd"],
+    development: ["React", "TypeScript", "NodeJS"],
+    link: "https://sdtc.vn/",
+    linkType: "Live Product",
+  },
 ];
 
 export const Projects = () => {

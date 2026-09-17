@@ -1,10 +1,10 @@
 const experiences = [
   {
-    period: "1/2024 — Present",
+    period: "1/2024 — 7/2026",
     role: "Development Team Lead ",
     company: "SeaDragon Technology LLC",
     description:
-      " Leading the design and frontend development of internal enterprise products (BMA). Responsible for product UX, system architecture, and coordinating a small development team to deliver web and application solutions for business clients.",
+      "Leading the design and frontend development of internal enterprise products (BMA). Responsible for product UX, system architecture, and coordinating a small development team to deliver web and application solutions for business clients.",
     technologies: ["React", "TypeScript", "Next.js", "MongoDb", "Figma"],
     current: true,
   },
