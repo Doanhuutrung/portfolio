@@ -49,7 +49,7 @@ const projects = [
   {
     title: "SDTC",
     description:
-      "Sea Dragon Technology — công ty công nghệ nơi tôi tham gia phát triển các sản phẩm digital, tập trung vào UI/UX, web và mobile experiences.",
+      "Sea Dragon Technology — công ty công nghệ chuyên thiết kế & phát triển sản phẩm tại TP.HCM, cung cấp các dịch vụ agency, marketing, website và các sản phẩm số cho doanh nghiệp ",
     image: "/portfolio/projects/projects-5.webp",
     role: "UI/UX Designer · Development Team Lead",
     tools: ["Figma", "Adobe Photoshop", "Adobe Xd"],
