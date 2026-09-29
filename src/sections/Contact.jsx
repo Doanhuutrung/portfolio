@@ -1,14 +1,8 @@
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  CheckCircle,
-  AlertCircle,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const contactInfo = [
   {
@@ -31,6 +25,9 @@ const contactInfo = [
   },
 ];
 
+// Regex email đơn giản
+const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -38,16 +35,34 @@ export const Contact = () => {
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({
-    type: null, // 'success' or 'error'
-    message: "",
-  });
+
+  const validateForm = () => {
+    if (!formData.name.trim()) {
+      toast.warn("Vui lòng nhập tên của bạn.");
+      return false;
+    }
+    if (!formData.email.trim()) {
+      toast.warn("Vui lòng nhập email.");
+      return false;
+    }
+    if (!isValidEmail(formData.email)) {
+      toast.warn("Email không hợp lệ, vui lòng kiểm tra lại.");
+      return false;
+    }
+    if (!formData.message.trim()) {
+      toast.warn("Vui lòng nhập nội dung tin nhắn.");
+      return false;
+    }
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!validateForm()) return;
+
     setIsLoading(true);
-    setSubmitStatus({ type: null, message: "" });
+
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -58,6 +73,8 @@ export const Contact = () => {
           "EmailJS configuration is missing. Please check your environment variables.",
         );
       }
+
+      const toastId = toast.loading("Đang gửi tin nhắn...");
 
       await emailjs.send(
         serviceId,
@@ -70,22 +87,21 @@ export const Contact = () => {
         publicKey,
       );
 
-      setSubmitStatus({
+      toast.update(toastId, {
+        render: "Gửi thành công! Mình sẽ phản hồi bạn sớm nhất.",
         type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+        isLoading: false,
+        autoClose: 4000,
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("EmailJS error:", error);
-      setSubmitStatus({
-        type: "error",
-        message:
-          error.text || "Failed to send message. Please try again later.",
-      });
+      toast.error(error.text || "Gửi thất bại. Vui lòng thử lại sau.");
     } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
@@ -113,7 +129,7 @@ export const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSubmit} noValidate>
               <div>
                 <label
                   htmlFor="name"
@@ -124,7 +140,6 @@ export const Contact = () => {
                 <input
                   id="name"
                   type="text"
-                  required
                   placeholder="Your name..."
                   value={formData.name}
                   onChange={(e) =>
@@ -137,7 +152,6 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
@@ -145,7 +159,6 @@ export const Contact = () => {
                 <input
                   id="email"
                   type="email"
-                  required
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) =>
@@ -165,7 +178,6 @@ export const Contact = () => {
                 <textarea
                   id="message"
                   rows={5}
-                  required
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -190,24 +202,6 @@ export const Contact = () => {
                   </>
                 )}
               </Button>
-
-              {submitStatus.type && (
-                <div
-                  className={`flex items-center gap-3
-                     p-4 rounded-xl ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
-                >
-                  {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
-                  )}
-                  <p className="text-sm">{submitStatus.message}</p>
-                </div>
-              )}
             </form>
           </div>
 
